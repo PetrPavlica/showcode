@@ -1,0 +1,44 @@
+{* Latte template *}
+
+
+{block content}
+<div class="row mt">
+          <div class="col-lg-12">
+            <div class="form-panel">
+              <h4 class="mb"><i class="fa fa-angle-right"></i> Přidání domény</h4>
+                 <form n:name="dbForm" class='form-horizontal style-form'>
+                    <div class='form-group'>
+                        <label n:name='domains_id' class="col-sm-2 col-sm-2 control-label" for="server">Domena</label>
+                       <div class="col-sm-8"> 
+                        <select n:name='domains_id' type='text' id='domains_id' class="form-control round-form"></select>
+                       </div> 
+                    </div> 
+                   <div class='form-group'>
+                        <label n:name='db' class="col-sm-2 col-sm-2 control-label" for="server">Databáze</label>
+                       <div class="col-sm-8"> 
+                        <input n:name='db' type='text' id='db' class="form-control round-form">
+                       </div> 
+                    </div>  
+                   <div class='form-group'>
+                        <label n:name='server' class="col-sm-2 col-sm-2 control-label" for="server">Server</label>
+                       <div class="col-sm-8"> 
+                        <input n:name='server' type='text' id='server' class="form-control round-form">
+                       </div> 
+                    </div>
+                    <div class='form-group'>
+                        <label n:name='admin_adress' class="col-sm-2 col-sm-2 control-label" for="ftp">Aresa administrace</label>
+                       <div class="col-sm-8"> 
+                        <input n:name='admin_adress' type='text' id='admin_adress' class="form-control round-form">
+                       </div> 
+                    </div>
+                  
+                    <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button n:name='send' class="btn btn-theme" type="submit">Uložit</button>
+                      
+                    </div>
+                  </div>
+                </form>
+            </div>
+           </div>
+</div>                    

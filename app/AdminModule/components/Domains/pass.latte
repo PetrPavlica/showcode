@@ -1,0 +1,31 @@
+{block content}
+<div class="row mt">
+          <div class="col-lg-12">
+            <div class="form-panel">
+              <h4 class="mb"><i class="fa fa-angle-right"></i> Ověřit uživatele</h4>
+                 <form n:name="passForm" class='form-horizontal style-form'>
+
+                  <input n:name='id_send' type='hidden' id='id_send'>
+                    <div class='form-group'>
+                        <label n:name='password' class="col-sm-2 col-sm-2 control-label" for="password">Ověření</label>
+                       <div class="col-sm-8"> 
+                        <input n:name='password' type='password' id='password' class="form-control round-form"/>
+                       </div> 
+                    </div> 
+                   
+                     
+                    <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button n:name='send' class="btn btn-theme" type="submit">Ověřit</button>
+                      
+                    </div>
+                  </div>
+                </form>
+            </div>
+           </div>
+</div>
+<script type="text/javascript">
+        function getSendId(element) {
+           document.getElementById('id_send').value =element.value;
+        }
+    </script>

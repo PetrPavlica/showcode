@@ -1,0 +1,67 @@
+{* Latte template *}
+
+{block content}
+                        
+<!-- row -->
+        <div class="row mt">
+          <div class="col-md-12">
+            <div class="content-panel">
+              <table class="table table-striped table-advance table-hover">
+                <h4><i class="fa fa-angle-right"></i> Lidé</h4>
+                <hr>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Doména</th>
+                    <th>FTP</th>
+                    <th>Datum vytvoření</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {foreach $allDomains as $domains}    
+                  <tr>
+                    <td>
+                      {$domains['id']}
+                    </td>
+                    
+                    <td>{$domains['domain']}</td>
+                    <td>{$domains['ftp']}</td>
+                    <td>{$domains['date_create']}</td>
+                    <td>
+                    {if $allUsers[$domains['id']]!= null}
+                        {foreach $allUsers[$domains['id']] as $u}
+                           
+                            {$selectorPeople[$u['people_id']]}
+                            <a href="{plink addDomainsUserForm:del!,$u['id']}"><button class="btn btn-primary btn-xs"><i class="fa fa-ban"></i></button></a>
+                        {/foreach}  
+                        {/if}
+                    </td>
+                    <td>
+                        {if $domains['active'] == 1}
+                            <span class="label label-success">Aktivní</span>
+                        {elseif $domains['active'] == 0}
+                            <span class="label label-danger label-mini">Vypnutý</span>
+                        {/if}
+                       
+                  
+                    </td>
+                    <td>
+                      <button class="btn btn-success btn-xs" value="{$domains['id'].'.'.'domain'}" data-toggle="modal" data-target="#exampleModalPass" id="{$domains['id']}" onclick="getSendId(this)"><i class="fa fa-eye"></i></button>  
+                      <a href="{plink Domains:db,$domains['id']}"><button class="btn btn-primary btn-xs"><i class="fa fa-database"></i></button></a>  
+                     <button class="btn btn-success btn-xs" value="{$domains['id']}" data-toggle="modal" data-target="#exampleModalDomainsUser" id="{$domains['id']}" onclick="getDomainId(this)"><i class="fa fa-plus"></i></button>
+                      <a href="{plink domainsForm:edit!,$domains['id']}"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
+                      <button class="btn btn-danger btn-xs" value="{$domains['id'].'.'.'domain'}" data-toggle="modal" data-target="#exampleModalSendPass" id="{$domains['id']}" onclick="getEmailId(this)"><i class="fa fa-send"></i></button>
+                    </td>
+                  </tr>
+                     
+                  {/foreach} 
+                </tbody>
+              </table>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-md-12 -->
+        </div>
+        <!-- /row -->
+ 

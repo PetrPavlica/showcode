@@ -1,0 +1,63 @@
+{* Latte template *}
+
+{block content}
+        
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#domains" aria-expanded="false" aria-controls="domains">
+    Přidat doménu
+  </button>
+<div class='collapse' id="domains">
+{control domainsForm}
+</div>
+{control domains}
+<div class="modal fade" id="exampleModalDomainsUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Přidání loginu</h5>
+        
+      </div>
+      <div class="modal-body">
+          {control addDomainsUserForm}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
+      </div>
+    </div>
+  </div>
+</div>  
+<div class="modal fade" id="exampleModalPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Přidání loginu</h5>
+        
+      </div>
+      <div class="modal-body">
+          {control passForm}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+ <div class="modal fade" id="exampleModalSendPass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Přidání loginu</h5>
+        
+      </div>
+      <div class="modal-body">
+          {control sendPassForm}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+ 
